@@ -13,31 +13,11 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
+        <tr *ngFor="let search of searchResult">
             <th scope="row">1</th>
-            <td><img src="../../../assets/images/sloth1.jpg" width="100px"></td>
-            <td>Movie 1 Title</td>
-            <td>Short description for the movie</td>
-            <td><a href="" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                        class="bi bi-film"></i>Trailer</a>
-                <a routerLink="/details" class="btn btn-primary"><i class="bi bi-eye"></i>Details</a>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td><img src="../../../assets/images/sloth1.jpg" width="100px"></td>
-            <td>Movie 1 Title</td>
-            <td>Short description for the movie</td>
-            <td><a href="" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                        class="bi bi-film"></i>Trailer</a>
-                <a routerLink="/details" class="btn btn-primary"><i class="bi bi-eye"></i>Details</a>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td><img src="../../../assets/images/sloth1.jpg" width="100px"></td>
-            <td>Movie 1 Title</td>
-            <td>Short description for the movie</td>
+            <td><img [src]="search.imageUrl" width="100px"></td>
+            <td>{{search.title}}</td>
+            <td>{{search.description}}</td>
             <td><a href="" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
                         class="bi bi-film"></i>Trailer</a>
                 <a routerLink="/details" class="btn btn-primary"><i class="bi bi-eye"></i>Details</a>

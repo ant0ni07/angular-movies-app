@@ -1,1 +1,199 @@
-<p>feedback works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <!-- <form #feedbackForm="ngForm" (ngSubmit)="submitFeedback()" action=""> -->
+      <form [formGroup]="feedbackForm" (ngSubmit)="submitFeedback()">
+        <legend>Let us know what you think</legend>
+        <hr />
+        <div class="mb-3">
+          <label for="emailAddress" class="form-label">Email address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="emailAddress"
+            name="emailAddress"
+            placeholder="Your email address"
+            formControlName="emailAddress"
+          />
+        </div>
+        <div
+          class="text-danger"
+          *ngIf="
+            feedbackForm.get('emailAddress')?.invalid &&
+            feedbackForm.get('emailAddress')?.dirty
+          "
+        >
+          <div
+            class=""
+            *ngIf="feedbackForm.get('emailAddress')?.hasError('required')"
+          >
+            Email required
+          </div>
+          <div
+            class=""
+            *ngIf="feedbackForm.get('emailAddress')?.hasError('email')"
+          >
+            Invalid Format
+          </div>
+          <div
+            class=""
+            *ngIf="feedbackForm.get('emailAddress')?.hasError('invalidDomain')"
+          >
+            Invalid Domain
+          </div>
+        </div>
+        <!-- <div
+          class="text-danger"
+          *ngIf="
+            emailInput.invalid && (emailInput.dirty || feedbackForm.submitted)
+          "
+        >
+          <div *ngIf="emailInput.hasError('required')">Email is required</div>
+          <div *ngIf="emailInput.hasError('email')">Invalid email format</div> 
+        </div>-->
+        <div class="mb-3">
+          <label for="phoneNumber" class="form-label">Phone number</label>
+          <input
+            type="text"
+            class="form-control"
+            id="phoneNumber"
+            name="phoneNumber"
+            placeholder="Your phone number"
+            formControlName="phoneNumber"
+          />
+        </div>
+        <div
+          class="text-danger"
+          *ngIf="
+            feedbackForm.get('phoneNumber')?.invalid &&
+            feedbackForm.get('phoneNumber')?.dirty
+          "
+        >
+          <div
+            class=""
+            *ngIf="feedbackForm.get('phoneNumber')?.hasError('pattern')"
+          >
+            Invalid pattern
+          </div>
+        </div>
+        <!-- <div
+          class="text-danger"
+          *ngIf="
+            phoneInput.invalid && (phoneInput.dirty || feedbackForm.submitted)
+          "
+        >
+          <div *ngIf="phoneInput.hasError('pattern')">
+            Invalid phone number format
+          </div> 
+        </div>-->
+        <div class="mb-3">
+          <label for="rateExperience" class="form-label">Rate experience</label>
+          <input
+            type="range"
+            class="form-range"
+            id="rateExperience"
+            name="rateExperience"
+            min="0"
+            max="10"
+            step="1"
+            formControlName="rateExperience"
+          />
+        </div>
+        <div>Rate: {{ feedbackForm.get("rateExperience")?.value }}</div>
+
+        <div class="mb-3">
+          <label for="feedbackTitle" class="form-label">Title</label>
+          <input
+            type="text"
+            class="form-control"
+            id="feedbackTitle"
+            name="feedbackTitle"
+            placeholder="Your feedback Title"
+            formControlName="feedbackTitle"
+          />
+        </div>
+        <div
+          class="text-danger"
+          *ngIf="
+            feedbackForm.get('feedbackTitle')?.invalid &&
+            feedbackForm.get('feedbackTitle')?.dirty
+          "
+        >
+          <div
+            class=""
+            *ngIf="feedbackForm.get('feedbackTitle')?.hasError('required')"
+          >
+            Title is required
+          </div>
+        </div>
+        <!-- <div
+          class="text-danger"
+          *ngIf="
+            feedbackTitleInput.invalid &&
+            (feedbackTitleInput.dirty || feedbackForm.submitted)
+          "
+        >
+          <div *ngId="feedbackTitleInput.hasError('required')">
+            Feedback title is required
+          </div>
+          <div *ngIf="feedbackTitleInput.hasError('pattern')">
+            Invalid title format
+          </div>
+        </div> -->
+
+        <div class="mb-3">
+          <label for="feedback" class="form-label">Feedback</label>
+          <input
+            type="text"
+            class="form-control"
+            id="feedback"
+            name="feedback"
+            formControlName="feedback"
+          />
+        </div>
+        <div
+          class="text-danger"
+          *ngIf="
+            feedbackForm.get('feedback')?.invalid &&
+            feedbackForm.get('feedback')?.dirty
+          "
+        >
+          <div
+            class=""
+            *ngIf="feedbackForm.get('feedback')?.hasError('required')"
+          >
+            Feedback is required
+          </div>
+
+          <div
+          class=""
+          *ngIf="feedbackForm.get('feedback')?.hasError('inappropriateKeyword')"
+        >
+          Remove keywords
+        </div>
+        </div>
+        <!-- <div
+          class="text-danger"
+          *ngIf="
+            feedbackInput.invalid &&
+            (feedbackInput.dirty || feedbackForm.submitted)
+          "
+        >
+          <div *ngId="feedbackInput.hasError('required')">
+            Feedback is required
+          </div>
+        </div> -->
+
+        <div class="mb-3">
+          <button
+            type="submit"
+            class="btn btn-primary"
+            [disabled]="!feedbackForm.valid"
+          >
+            <i class="bi bi-send"></i>Submit Feedback
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

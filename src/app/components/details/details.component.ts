@@ -1,4 +1,5 @@
-import { AfterContentChecked, AfterContentInit, AfterViewInit, Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import {  Component,  OnInit,  } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -6,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.css']
 })
-export class DetailsComponent implements OnInit, OnChanges, AfterContentInit, AfterViewInit{
+export class DetailsComponent implements OnInit{
 
   movieId = "";
 
@@ -23,19 +24,11 @@ export class DetailsComponent implements OnInit, OnChanges, AfterContentInit, Af
     console.log("the movie id is : " + this.movieId)
   }
  
-  ngOnChanges(changes: SimpleChanges): void {
-      console.log("ngOnChanges called")
-  }
   ngOnInit(): void {
-    console.log("ngOnInit called")
+   
       
   }
-  ngAfterContentInit(): void {
-    console.log("ngAfterContent called")
-  }
-  ngAfterViewInit(): void {
-    console.log("ngAfterView called")
-  }
+  
 
   
 }

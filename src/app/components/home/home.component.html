@@ -1,0 +1,57 @@
+<div class="row">
+    <div class="col-md-8">
+  <app-carousel></app-carousel>
+</div>
+  <div class="col-md-4">
+    <div
+      class="card mb-3"
+      *ngFor="let movie of topMovies"
+      style="max-width: 540px"
+      routerLink="/details/1"
+    >
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img
+            [src]="movie.imageUrl"
+            class="img-fluid rounded-start h-100"
+            alt="..."
+          />
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{ movie.title }}</h5>
+            <h6 class="card-title">{{ movie.actors }}</h6>
+            <p class="card-text">
+              <a class="btn btn-warning"><i class="bi bi film">Trailer</i></a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Fan fav -->
+<div class="row">
+  <h1>Fan favourites</h1>
+  <hr />
+  <div class="col-md-3" *ngFor="let movie of fanFavouriteMovies">
+    <div class="card">
+      <img [src]="movie.imageUrl" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        <p class="card-text">{{ movie.actors }}</p>
+        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+      </div>
+      <div class="card-footer text-center text-muted">
+        <span style="float: left"
+          ><i class="bi bi-calendar"></i>{{ movie.year }}</span
+        >
+        <span><i class="bi bi-star"></i>{{ movie.rate }}</span>
+        <span style="float: right"
+          ><i class="bi bi-trophy"></i>{{ movie.rank }}</span
+        >
+      </div>
+    </div>
+  </div>
+</div>

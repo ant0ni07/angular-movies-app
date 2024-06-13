@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { MovieService } from 'src/app/services/movie.service';
 
 @Component({
   selector: 'app-details-actors',
@@ -7,26 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailsActorsComponent implements OnInit {
 
-  actors: any[] = [
-    {
-      imageUrl: "../../../assets/images/sloth1.jpg",
-      name: "Actor Name 1",
-      role: "Role"
-    },
-    {
-      imageUrl: "../../../assets/images/sloth1.jpg",
-      name: "Actor Name 2",
-      role: "Role"
-    },
-    {
-      imageUrl: "../../../assets/images/sloth1.jpg",
-      name: "Actor Name 3",
-      role: "Role"
-    },
-  ]
+  constructor(private movieService: MovieService) {
+    
+  }
+  actors: any[] = []
 
+  getActors(){
+    this.movieService.getActors().subscribe((data:any[])=> {
+      this.actors = data;
+    })
+  }
   ngOnInit(): void {
-   
+   this.getActors();
   }
 
 }

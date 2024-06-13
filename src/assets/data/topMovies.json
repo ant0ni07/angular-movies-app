@@ -1,0 +1,18 @@
+[
+    {
+      "imageUrl": "../../../assets/images/deathmark.png",
+      "title": "Movie Title 1",
+      "actors": "Movie Actors 1",
+      "year": 2023,
+      "rate": 8.5,
+      "rank": 2
+    },
+    {
+        "imageUrl": "../../../assets/images/deathmark.png",
+        "title": "Movie Title 2",
+        "actors": "Movie Actors 2",
+        "year": 2021,
+        "rate": 7.5,
+        "rank": 3
+    }
+  ]

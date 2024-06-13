@@ -1,0 +1,16 @@
+[
+    {
+        "imageUrl": "../../../assets/images/deathmark.png",
+        "title": "Movie Title 1",
+        "description": "The movie is about a death mark on car",
+        "rate": 8.5
+        
+      },
+      {
+        "imageUrl": "../../../assets/images/deathmark.png",
+        "title": "Movie Title 2",
+        "description": "The movie is about a mark on car",
+        "rate": 9.5
+      
+      }
+]

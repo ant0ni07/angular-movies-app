@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { MovieService } from 'src/app/services/movie.service';
 
 @Component({
   selector: 'app-details-movies',
@@ -7,23 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailsMoviesComponent implements OnInit{
 
-  movies: any[] = [
+  movies: any[] = []
+
+  constructor(private movieService: MovieService){
+
+  }
+  getMovies(){
+    this.movieService.getMovies().subscribe((data: any[])=>
     {
-      imageUrl: '../../../assets/images/deathmark.png',
-      title: 'Movie Title 1',
-      rate: 8.5,
-      
-    },
-    {
-      imageUrl: '../../../assets/images/deathmark.png',
-      title: 'Movie Title 2',
-      rate: 9.5,
-    
-    },
-   
-  ]
+      this.movies = data;
+    })
+  }
   ngOnInit(): void {
-   
+   this.getMovies();
   }
 
 }

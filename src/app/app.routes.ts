@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './components/main/main.component';
+import { MainComponent } from './components/main/main.component';
+import { HomeComponent } from './components/home/home.component';
 import { DetailsComponent } from './components/details/details.component';
 import { DetailsActorsComponent } from './components/details-actors/details-actors.component';
 import { DetailsMoviesComponent } from './components/details-movies/details-movies.component';
@@ -14,7 +15,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 
 export const routes: Routes = [
 {path:'', redirectTo:'home', pathMatch:'full'},
-{path:'home', component: HomeComponent},
+// {path:'', component: MainComponent},
+{path:'home', component: MainComponent},
 {path:'details/:id', component: DetailsComponent},
 {path:'details/actors/:id', component: DetailsActorsComponent},
 {path:'details/movies/:id', component: DetailsMoviesComponent},
@@ -22,6 +24,7 @@ export const routes: Routes = [
 {path:'feedback', component: FeedbackComponent},
 {path:'search/:movieTitle', component: SearchComponent},
 {path:'carousel', component: CarouselComponent},
+
 
 // Start Nested Routes
 // {path:'details', component: DetailsComponent, children:[

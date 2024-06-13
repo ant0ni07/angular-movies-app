@@ -1,0 +1,14 @@
+[
+    {
+        "imageUrl": "../../../assets/images/deathmark.png",
+        "title": "Movie Title 1",
+        "rate": 8.5
+        
+      },
+      {
+        "imageUrl": "../../../assets/images/deathmark.png",
+        "title": "Movie Title 2",
+        "rate": 9.5
+      
+      }
+]

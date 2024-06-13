@@ -1,0 +1,17 @@
+[
+    {
+    "imageUrl": "../../../assets/images/sloth1.jpg",
+    "name": "Actor Name 1",
+    "role": "Role"
+  },
+  {
+    "imageUrl": "../../../assets/images/sloth1.jpg",
+    "name": "Actor Name 2",
+    "role": "Role"
+  },
+  {
+    "imageUrl": "../../../assets/images/sloth1.jpg",
+    "name": "Actor Name 3",
+    "role": "Role"
+  }
+]
